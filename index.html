@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Snow Globe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <canvas id="snow-canvas"></canvas>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="title">Merry Christmas</h1>
+            <p class="subtitle">You were supposed to see this on Christmas, but better late than never...</p>
+        </header>
+
+        <section class="globe-stage">
+            <div class="snow-globe" id="globe">
+                <div class="globe-glass">
+                    <div class="inner-scene">
+                        <div class="tree">
+                            <div class="branch top"></div>
+                            <div class="branch middle"></div>
+                            <div class="branch bottom"></div>
+                            <div class="trunk"></div>
+                            <div class="bauble b1"></div>
+                            <div class="bauble b2"></div>
+                            <div class="bauble b3"></div>
+                            <div class="bauble b4"></div>
+                            <div class="bauble b5"></div>
+                            <div class="bauble b6"></div>
+                            <div class="star-topper">★</div>
+                        </div>
+                        <div class="snowman">
+                            <div class="snow-body bottom-part"></div>
+                            <div class="snow-body middle-part"></div>
+                            <div class="snow-head">
+                                <div class="hat"></div>
+                                <div class="nose"></div>
+                                <div class="eye left"></div>
+                                <div class="eye right"></div>
+                            </div>
+                            <div class="arm left"></div>
+                            <div class="arm right"></div>
+                        </div>
+                        <div class="presents">
+                            <div class="present p1">
+                                <div class="lid"></div>
+                                <div class="ribbon"></div>
+                            </div>
+                            <div class="present p2">
+                                <div class="lid"></div>
+                                <div class="ribbon"></div>
+                            </div>
+                        </div>
+                        <div class="ground-snow"></div>
+                        <div class="globe-snow-particles" id="globe-snow"></div>
+                    </div>
+                    <div class="reflection"></div>
+                </div>
+                <div class="globe-base">
+                    <div class="base-top"></div>
+                    <div class="base-bottom"></div>
+                    <div class="plaque">Secret</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="music-card-container">
+        <div class="music-card">
+            <div class="card-image">
+                <img src="img/music.jpg" alt="Album Art">
+            </div>
+            <div class="card-info">
+                <h3 class="song-title">Chẳng giống giáng xinh :3</h3>
+                <span class="heart-icon">❤️</span>
+            </div>
+            <div class="progress-area">
+                <div class="progress-bar">
+                    <div class="progress-current" id="progress-fill"></div>
+                </div>
+                <div class="time-tags">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">3:51</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="ctrl-btn shuffle">🔀</button>
+                <button class="ctrl-btn prev">⏮</button>
+                <button class="play-btn-main" id="main-play-btn">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon" style="display: none;">⏸</span>
+                </button>
+                <button class="ctrl-btn next">⏭</button>
+                <button class="ctrl-btn repeat">🔁</button>
+            </div>
+            <div class="volume-container">
+                <span class="volume-icon">🔊</span>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" class="volume-slider">
+            </div>
+        </div>
+        <!-- Trigger button (visible when minimized) -->
+        <div class="music-trigger">
+            <div class="trigger-icon">🎵</div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="music/YTSave.com_YouTube_chang-giong-giang-sinh-Lu-ft-Willistic-&_Media_7Bh8FOTNWAE_007_48k.m4a"
+            type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Secret Letter Popup -->
+    <div class="letter-overlay" id="letter-overlay">
+        <div class="letter-content">
+            <span class="close-btn" id="close-letter">&times;</span>
+            <div class="letter-body">
+                <h2>Message to you</h2>
+                <p>A secret!!! You shall know of it one day. Perhaps in a month, three months, a year, a decade...</p>
+                <div class="secret-input-container">
+                    <label for="secret-code">Please enter your password: </label>
+                    <input type="password" id="secret-code" placeholder="Your secret...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
